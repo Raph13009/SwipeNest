@@ -52,7 +52,9 @@ function dataRoot() {
   for (const c of candidates) {
     if (existsSync(path.join(c, "processed", "listings.json"))) return c;
   }
-  return path.join(process.cwd(), "..", "data");
+  throw new Error(
+    "Listing data not found. Expected data/processed/listings.json next to the app."
+  );
 }
 
 const g = globalThis as unknown as {
@@ -225,12 +227,23 @@ export function imagePath(filename: string) {
 
 export const engine = {
   health() {
-    return {
-      status: "ok",
-      data_ready: listings().length > 0,
-      app: "SwipeNest AI",
-      runtime: "next",
-    };
+    try {
+      return {
+        status: "ok",
+        data_ready: listings().length > 0,
+        app: "SwipeNest AI",
+        runtime: "next",
+        listings: listings().length,
+      };
+    } catch {
+      return {
+        status: "degraded",
+        data_ready: false,
+        app: "SwipeNest AI",
+        runtime: "next",
+        listings: 0,
+      };
+    }
   },
 
   onboarding(userId: string, preferences: UserPreferences, demo = false) {
@@ -255,11 +268,18 @@ export const engine = {
       user.preferences = preferences;
     }
     user.onboarding_complete = true;
-    if (user.preferences.min_surface >= 40) user.dim_scores.apartment_size = 0.65;
-    if (user.preferences.aesthetic.some((a) => /bright|lumineux/i.test(a))) {
+    const prefs = { ...defaultPrefs(), ...user.preferences };
+    prefs.aesthetic = prefs.aesthetic || [];
+    prefs.arrondissements = prefs.arrondissements || [];
+    prefs.amenities = prefs.amenities || [];
+    prefs.lifestyle = prefs.lifestyle || [];
+    prefs.property_types = prefs.property_types || [];
+    user.preferences = prefs;
+    if (prefs.min_surface >= 40) user.dim_scores.apartment_size = 0.65;
+    if (prefs.aesthetic.some((a) => /bright|lumineux/i.test(a))) {
       user.dim_scores.natural_light = 0.7;
     }
-    for (const a of user.preferences.arrondissements) {
+    for (const a of prefs.arrondissements) {
       user.neighborhood_scores[String(a)] = 0.7;
     }
     return { ok: true, state: stateOf(userId) };
