@@ -273,7 +273,7 @@ export const engine = {
     prefs.arrondissements = prefs.arrondissements || [];
     prefs.amenities = prefs.amenities || [];
     prefs.lifestyle = prefs.lifestyle || [];
-    prefs.property_types = prefs.property_types || [];
+    prefs.apartment_types = prefs.apartment_types || [];
     user.preferences = prefs;
     if (prefs.min_surface >= 40) user.dim_scores.apartment_size = 0.65;
     if (prefs.aesthetic.some((a) => /bright|lumineux/i.test(a))) {

@@ -7,8 +7,13 @@ const frontendRoot = path.resolve(__dirname, "..");
 const repoData = path.resolve(frontendRoot, "..", "data");
 const dest = path.join(frontendRoot, "data");
 
+const destListings = path.join(dest, "processed", "listings.json");
 if (!existsSync(path.join(repoData, "processed", "listings.json"))) {
-  console.warn("[copy-data] ../data/processed/listings.json missing — skipping");
+  if (existsSync(destListings)) {
+    console.log("[copy-data] ../data missing — keeping existing frontend/data");
+  } else {
+    console.warn("[copy-data] ../data/processed/listings.json missing — skipping");
+  }
   process.exit(0);
 }
 
