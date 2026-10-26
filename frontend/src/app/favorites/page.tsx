@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Logo } from "@/components/brand/Logo";
+import { RequireAuth } from "@/components/auth/RequireAuth";
 import { api, mediaUrl } from "@/lib/api";
 import { arrLabel, formatRent } from "@/lib/utils";
 import { getMessages, t } from "@/lib/i18n";
@@ -50,10 +50,10 @@ export default function FavoritesPage() {
   };
 
   return (
+    <RequireAuth>
     <main className="page">
-      <Logo />
-      <div className="mt-6 flex items-center justify-between gap-3">
-        <h1 className="text-3xl font-bold text-[var(--sn-green)]">{t(messages, "saved.title")}</h1>
+      <div className="flex items-center justify-between gap-3">
+        <h1 className="text-xl font-bold text-[var(--sn-green)] lg:text-2xl">{t(messages, "saved.title")}</h1>
         <button
           className="sn-btn sn-btn-primary text-sm"
           disabled={selected.length < 2}
@@ -137,5 +137,6 @@ export default function FavoritesPage() {
         </section>
       )}
     </main>
+    </RequireAuth>
   );
 }

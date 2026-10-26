@@ -107,26 +107,24 @@ export const useAppStore = create<AppState>()((set, get) => ({
         language: ((profile?.preferences as UserPreferences)?.language ||
           get().locale) as Locale,
       };
-      const complete = Boolean(profile?.onboarding_complete);
-
       let user = await api.getUser();
-      if (complete && !user.onboarding_complete) {
+      // Skip wizard: first login gets default prefs and goes straight into the app.
+      if (!user.onboarding_complete) {
         const res = await api.onboarding(prefs, false);
         user = res.state;
+        await persistProfile(user.preferences, true);
       }
 
       set({
         user,
-        preferences: complete ? user.preferences : prefs,
-        onboardingComplete: complete || user.onboarding_complete,
+        preferences: user.preferences,
+        onboardingComplete: true,
         locale: (user.preferences.language || prefs.language || get().locale) as Locale,
         hydrated: true,
       });
 
-      if (complete || user.onboarding_complete) {
-        await get().refreshFeed();
-        await get().refreshDna();
-      }
+      await get().refreshFeed();
+      await get().refreshDna();
     } catch {
       set({
         hydrated: true,
