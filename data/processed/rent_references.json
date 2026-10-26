@@ -1,0 +1,102 @@
+{
+  "1": {
+    "arrondissement": 1,
+    "name": "Louvre",
+    "eur_per_m2": 42
+  },
+  "2": {
+    "arrondissement": 2,
+    "name": "Bourse",
+    "eur_per_m2": 40
+  },
+  "3": {
+    "arrondissement": 3,
+    "name": "Temple",
+    "eur_per_m2": 39
+  },
+  "4": {
+    "arrondissement": 4,
+    "name": "Hôtel-de-Ville",
+    "eur_per_m2": 41
+  },
+  "5": {
+    "arrondissement": 5,
+    "name": "Panthéon",
+    "eur_per_m2": 38
+  },
+  "6": {
+    "arrondissement": 6,
+    "name": "Luxembourg",
+    "eur_per_m2": 43
+  },
+  "7": {
+    "arrondissement": 7,
+    "name": "Palais-Bourbon",
+    "eur_per_m2": 42
+  },
+  "8": {
+    "arrondissement": 8,
+    "name": "Élysée",
+    "eur_per_m2": 40
+  },
+  "9": {
+    "arrondissement": 9,
+    "name": "Opéra",
+    "eur_per_m2": 36
+  },
+  "10": {
+    "arrondissement": 10,
+    "name": "Entrepôt",
+    "eur_per_m2": 34
+  },
+  "11": {
+    "arrondissement": 11,
+    "name": "Popincourt",
+    "eur_per_m2": 35
+  },
+  "12": {
+    "arrondissement": 12,
+    "name": "Reuilly",
+    "eur_per_m2": 32
+  },
+  "13": {
+    "arrondissement": 13,
+    "name": "Gobelins",
+    "eur_per_m2": 31
+  },
+  "14": {
+    "arrondissement": 14,
+    "name": "Observatoire",
+    "eur_per_m2": 33
+  },
+  "15": {
+    "arrondissement": 15,
+    "name": "Vaugirard",
+    "eur_per_m2": 34
+  },
+  "16": {
+    "arrondissement": 16,
+    "name": "Passy",
+    "eur_per_m2": 39
+  },
+  "17": {
+    "arrondissement": 17,
+    "name": "Batignolles-Monceau",
+    "eur_per_m2": 35
+  },
+  "18": {
+    "arrondissement": 18,
+    "name": "Butte-Montmartre",
+    "eur_per_m2": 33
+  },
+  "19": {
+    "arrondissement": 19,
+    "name": "Buttes-Chaumont",
+    "eur_per_m2": 30
+  },
+  "20": {
+    "arrondissement": 20,
+    "name": "Ménilmontant",
+    "eur_per_m2": 29
+  }
+}

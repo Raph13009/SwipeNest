@@ -1,0 +1,176 @@
+{
+  "brand": {
+    "name": "SwipeNest",
+    "tagline": "The AI that finds your ideal apartment in Paris.",
+    "subtitle": "Faster. Smarter. Safer."
+  },
+  "nav": {
+    "discover": "Discover",
+    "search": "Search",
+    "dna": "Taste DNA",
+    "saved": "Saved",
+    "map": "Map",
+    "settings": "Settings",
+    "account": "Account"
+  },
+  "welcome": {
+    "cta": "Start swiping",
+    "continue": "Continue to Discover",
+    "demo": "Try demo profile",
+    "how": "How it works",
+    "step1": "Define your needs",
+    "step2": "Discover & swipe",
+    "step3": "Let AI learn",
+    "step4": "Compare & verify",
+    "step5": "Apply with confidence"
+  },
+  "about": {
+    "nav": "About",
+    "title": "The team behind SwipeNest AI",
+    "intro": "Five ESSEC classmates building a smarter, safer way to find a home in Paris — product, legal, strategy and growth.",
+    "backHome": "Home",
+    "footnote": "SwipeNest AI is an academic demo for Advanced AI Algorithms. Listings are synthetic demonstration data."
+  },
+  "onboarding": {
+    "title": "Tell us what you want",
+    "name": "Your name",
+    "budget": "Max monthly rent",
+    "surface": "Minimum surface",
+    "areas": "Preferred arrondissements",
+    "type": "Apartment type",
+    "furnished": "Furnishing",
+    "amenities": "Amenities",
+    "lifestyle": "Lifestyle",
+    "aesthetic": "Aesthetic preferences",
+    "dream": "Describe your dream apartment",
+    "dreamPlaceholder": "Bright Haussmannian with wooden floors, under €1,500…",
+    "next": "Continue",
+    "back": "Back",
+    "finish": "Start discovering",
+    "any": "Any",
+    "furnishedYes": "Furnished",
+    "furnishedNo": "Unfurnished"
+  },
+  "discover": {
+    "match": "Match",
+    "month": "/ month",
+    "rooms": "rooms",
+    "why": "Why this apartment?",
+    "undo": "Undo",
+    "empty": "No more apartments in your range. Adjust preferences or reset.",
+    "rejectTitle": "What didn’t work?",
+    "skip": "Skip",
+    "submitReason": "Update my taste",
+    "too_expensive": "Too expensive",
+    "too_small": "Too small",
+    "too_dark": "Too dark",
+    "wrong_neighborhood": "Wrong neighborhood",
+    "disliked_style": "Disliked interior style",
+    "missing_amenities": "Missing amenities",
+    "other": "Other",
+    "synthetic": "Synthetic demo listing",
+    "risk": "Risk"
+  },
+  "explain": {
+    "title": "Why this apartment?",
+    "strengths": "Strengths",
+    "compromises": "Trade-offs",
+    "details": "View full analysis",
+    "close": "Close"
+  },
+  "dna": {
+    "title": "Your Apartment DNA",
+    "subtitle": "What the AI has learned from your swipes",
+    "reset": "Reset DNA",
+    "insights": "AI insights",
+    "styles": "Style affinity",
+    "neighborhoods": "Neighborhood affinity",
+    "amenities": "Amenity affinity",
+    "interactions": "interactions",
+    "interior_design": "Interior design",
+    "natural_light": "Natural light",
+    "architecture": "Architecture",
+    "apartment_size": "Apartment size",
+    "neighborhoods_dim": "Neighborhoods",
+    "layout": "Layout",
+    "materials_finishes": "Materials & finishes",
+    "amenities_dim": "Amenities",
+    "empty": "Swipe a few apartments to reveal your Taste DNA."
+  },
+  "search": {
+    "title": "Dream apartment search",
+    "placeholder": "Bright Haussmannian under €1,500 near lively cafés…",
+    "refinePlaceholder": "Show me something bigger…",
+    "search": "Search",
+    "refine": "Refine",
+    "results": "Results",
+    "empty": "No matches yet — try a different description."
+  },
+  "saved": {
+    "title": "Saved apartments",
+    "empty": "Liked apartments will appear here.",
+    "compare": "Compare selected",
+    "remove": "Remove",
+    "apply": "Apply with AI"
+  },
+  "compare": {
+    "title": "Smart comparison",
+    "winner": "Best overall fit",
+    "insights": "Based on your priorities"
+  },
+  "map": {
+    "title": "Paris map",
+    "subtitle": "Fly over the city, zoom into arrondissements, tap a price to open a listing."
+  },
+  "settings": {
+    "title": "Settings",
+    "account": "Account",
+    "accountHint": "Sign in with Google to sync preferences across devices.",
+    "signInGoogle": "Continue with Google",
+    "signOut": "Sign out",
+    "language": "Language",
+    "preferences": "Housing preferences",
+    "profile": "Application profile",
+    "reset": "Reset demo data",
+    "privacy": "Privacy",
+    "privacyBody": "Accounts use Supabase Auth (Google). Preferences sync to your profile. Ranking state lives on the API for this demo. Listings are synthetic demonstration data.",
+    "save": "Save changes",
+    "occupation": "Occupation",
+    "about": "About you (for drafts)",
+    "adaptation": "Recommendation adaptation"
+  },
+  "listing": {
+    "details": "Details",
+    "amenities": "Amenities",
+    "scam": "Scam detective",
+    "apply": "Apply with AI",
+    "save": "Save",
+    "back": "Back",
+    "floor": "Floor",
+    "style": "Style",
+    "disclaimer": "Synthetic demonstration listing — not a real available rental."
+  },
+  "scam": {
+    "low": "Low risk",
+    "medium": "Medium risk",
+    "high": "High risk",
+    "signals": "Warning signs",
+    "advice": "Safety advice"
+  },
+  "apply": {
+    "title": "Application copilot",
+    "tone": "Tone",
+    "professional": "Professional",
+    "warm": "Warm",
+    "concise": "Concise",
+    "copy": "Copy message",
+    "checklist": "Document checklist",
+    "generate": "Generate"
+  },
+  "common": {
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "mo": "mo"
+  }
+}

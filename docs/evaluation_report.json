@@ -1,0 +1,14 @@
+{
+  "n_listings": 405,
+  "n_liked_simulated": 6,
+  "baseline_ndcg@10": 0.7726,
+  "adaptive_ndcg@10": 0.6857,
+  "baseline_mean_relevance@10": 0.4,
+  "adaptive_mean_relevance@10": 0.8,
+  "baseline_top10_mean_brightness": 0.5019,
+  "adaptive_top10_mean_brightness_after_too_dark": 0.5162,
+  "brightness_lift": 0.0143,
+  "scam_labeled": 5,
+  "scam_detection_recall_proxy": 1.0,
+  "note": "Relevance is a handcrafted proxy aligned with the simulated user taste; not a claim of production accuracy."
+}

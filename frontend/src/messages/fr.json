@@ -1,0 +1,176 @@
+{
+  "brand": {
+    "name": "SwipeNest",
+    "tagline": "L'IA qui trouve votre appartement idéal à Paris.",
+    "subtitle": "Plus rapide. Plus intelligent. Plus sûr."
+  },
+  "nav": {
+    "discover": "Discover",
+    "search": "Recherche",
+    "dna": "Taste DNA",
+    "saved": "Favoris",
+    "map": "Carte",
+    "settings": "Réglages",
+    "account": "Compte"
+  },
+  "welcome": {
+    "cta": "Commencer",
+    "continue": "Continuer vers Discover",
+    "demo": "Profil démo",
+    "how": "Comment ça marche ?",
+    "step1": "Définissez vos besoins",
+    "step2": "Découvrez & swipez",
+    "step3": "Laissez l'IA apprendre",
+    "step4": "Comparez & vérifiez",
+    "step5": "Candidatez sereinement"
+  },
+  "about": {
+    "nav": "À propos",
+    "title": "L’équipe derrière SwipeNest AI",
+    "intro": "Cinq camarades ESSEC qui construisent une façon plus intelligente et plus sûre de trouver un logement à Paris — produit, juridique, stratégie et growth.",
+    "backHome": "Accueil",
+    "footnote": "SwipeNest AI est une démo académique pour Advanced AI Algorithms. Les annonces sont des données synthétiques de démonstration."
+  },
+  "onboarding": {
+    "title": "Dites-nous ce que vous voulez",
+    "name": "Votre prénom",
+    "budget": "Loyer mensuel max",
+    "surface": "Surface minimale",
+    "areas": "Arrondissements préférés",
+    "type": "Type d'appartement",
+    "furnished": "Meublé",
+    "amenities": "Équipements",
+    "lifestyle": "Style de vie",
+    "aesthetic": "Préférences esthétiques",
+    "dream": "Décrivez votre appartement idéal",
+    "dreamPlaceholder": "Haussmannien lumineux avec parquet, moins de 1 500 €…",
+    "next": "Continuer",
+    "back": "Retour",
+    "finish": "Commencer à découvrir",
+    "any": "Indifférent",
+    "furnishedYes": "Meublé",
+    "furnishedNo": "Non meublé"
+  },
+  "discover": {
+    "match": "Match",
+    "month": "/ mois",
+    "rooms": "pièces",
+    "why": "Pourquoi ce logement ?",
+    "undo": "Annuler",
+    "empty": "Plus d'appartements dans votre fourchette. Ajustez vos préférences.",
+    "rejectTitle": "Qu'est-ce qui n'allait pas ?",
+    "skip": "Passer",
+    "submitReason": "Affiner mes goûts",
+    "too_expensive": "Trop cher",
+    "too_small": "Trop petit",
+    "too_dark": "Trop sombre",
+    "wrong_neighborhood": "Mauvais quartier",
+    "disliked_style": "Style intérieur",
+    "missing_amenities": "Équipements manquants",
+    "other": "Autre",
+    "synthetic": "Annonce démo synthétique",
+    "risk": "Risque"
+  },
+  "explain": {
+    "title": "Pourquoi ce logement ?",
+    "strengths": "Points forts",
+    "compromises": "Compromis",
+    "details": "Voir le détail de l'analyse",
+    "close": "Fermer"
+  },
+  "dna": {
+    "title": "Votre ADN appartement",
+    "subtitle": "Ce que l'IA a appris de vos swipes",
+    "reset": "Réinitialiser l'ADN",
+    "insights": "Insights IA",
+    "styles": "Affinité de style",
+    "neighborhoods": "Affinité de quartier",
+    "amenities": "Affinité d'équipements",
+    "interactions": "interactions",
+    "interior_design": "Design intérieur",
+    "natural_light": "Lumière naturelle",
+    "architecture": "Architecture",
+    "apartment_size": "Taille",
+    "neighborhoods_dim": "Quartiers",
+    "layout": "Agencement",
+    "materials_finishes": "Matériaux & finitions",
+    "amenities_dim": "Équipements",
+    "empty": "Swipez quelques appartements pour révéler votre Taste DNA."
+  },
+  "search": {
+    "title": "Recherche appartement de rêve",
+    "placeholder": "Haussmannien lumineux sous 1 500 € près des cafés…",
+    "refinePlaceholder": "Montrez-moi quelque chose de plus grand…",
+    "search": "Rechercher",
+    "refine": "Affiner",
+    "results": "Résultats",
+    "empty": "Aucun résultat — essayez une autre description."
+  },
+  "saved": {
+    "title": "Appartements sauvegardés",
+    "empty": "Vos likes apparaîtront ici.",
+    "compare": "Comparer la sélection",
+    "remove": "Retirer",
+    "apply": "Candidater avec l'IA"
+  },
+  "compare": {
+    "title": "Comparaison intelligente",
+    "winner": "Meilleur alignement",
+    "insights": "Selon vos priorités"
+  },
+  "map": {
+    "title": "Carte de Paris",
+    "subtitle": "Survolez la ville, zoomez sur les arrondissements, touchez un prix pour ouvrir une annonce."
+  },
+  "settings": {
+    "title": "Réglages",
+    "account": "Compte",
+    "accountHint": "Connecte-toi avec Google pour synchroniser tes préférences.",
+    "signInGoogle": "Continuer avec Google",
+    "signOut": "Se déconnecter",
+    "language": "Langue",
+    "preferences": "Préférences logement",
+    "profile": "Profil candidature",
+    "reset": "Réinitialiser la démo",
+    "privacy": "Confidentialité",
+    "privacyBody": "Les comptes passent par Supabase Auth (Google). Les préférences sont synchronisées sur ton profil. Le ranking tourne côté API pour cette démo. Les annonces sont synthétiques.",
+    "save": "Enregistrer",
+    "occupation": "Profession",
+    "about": "À propos (pour les brouillons)",
+    "adaptation": "Adaptation des recommandations"
+  },
+  "listing": {
+    "details": "Détails",
+    "amenities": "Équipements",
+    "scam": "Détecteur d'arnaques",
+    "apply": "Candidater avec l'IA",
+    "save": "Sauvegarder",
+    "back": "Retour",
+    "floor": "Étage",
+    "style": "Style",
+    "disclaimer": "Annonce de démonstration synthétique — pas une location réelle."
+  },
+  "scam": {
+    "low": "Risque faible",
+    "medium": "Risque moyen",
+    "high": "Risque élevé",
+    "signals": "Signaux d'alerte",
+    "advice": "Conseils de sécurité"
+  },
+  "apply": {
+    "title": "Copilote de candidature",
+    "tone": "Ton",
+    "professional": "Professionnel",
+    "warm": "Chaleureux",
+    "concise": "Concis",
+    "copy": "Copier le message",
+    "checklist": "Checklist documents",
+    "generate": "Générer"
+  },
+  "common": {
+    "loading": "Chargement…",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "mo": "mois"
+  }
+}

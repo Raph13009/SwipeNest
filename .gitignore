@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.venv/
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+.env
+.env.local
+*.log
+.turbo/
+dist/
+data/raw/
+.cache/
+*.egg-info/
+frontend/tsconfig.tsbuildinfo

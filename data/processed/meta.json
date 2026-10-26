@@ -1,0 +1,28 @@
+{
+  "count": 405,
+  "text_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "text_dim": 384,
+  "visual_dim": 8,
+  "styles": [
+    "art_deco",
+    "bohemian",
+    "haussmannian",
+    "industrial",
+    "modern",
+    "rustic",
+    "scandinavian"
+  ],
+  "style_index": {
+    "art_deco": 0,
+    "bohemian": 1,
+    "haussmannian": 2,
+    "industrial": 3,
+    "modern": 4,
+    "rustic": 5,
+    "scandinavian": 6
+  },
+  "source": "omersh234/listinggenie-listings",
+  "license": "MIT",
+  "note": "Synthetic demonstration data adapted to Paris rentals. Not real listings.",
+  "seed": 42
+}
