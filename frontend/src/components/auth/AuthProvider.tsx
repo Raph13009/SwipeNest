@@ -16,11 +16,29 @@ type AuthContextValue = {
   user: User | null;
   loading: boolean;
   configured: boolean;
-  signInWithGoogle: (next?: string) => Promise<void>;
+  signInWithPassword: (email: string, password: string) => Promise<void>;
+  signUpWithPassword: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
+
+async function syncProfile(user: User) {
+  const supabase = createClient();
+  await supabase.from("profiles").upsert(
+    {
+      id: user.id,
+      email: user.email,
+      display_name:
+        user.user_metadata?.full_name ||
+        user.user_metadata?.name ||
+        user.email?.split("@")[0] ||
+        null,
+      avatar_url: user.user_metadata?.avatar_url || null,
+    },
+    { onConflict: "id" }
+  );
+}
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const configured = isSupabaseConfigured();
@@ -52,17 +70,44 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => subscription.unsubscribe();
   }, [configured]);
 
-  const signInWithGoogle = useCallback(async (next = "/discover") => {
+  const signInWithPassword = useCallback(async (email: string, password: string) => {
     const supabase = createClient();
-    const origin = window.location.origin;
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${origin}/auth/callback?next=${encodeURIComponent(next)}`,
-        queryParams: { access_type: "offline", prompt: "consent" },
-      },
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email.trim(),
+      password,
     });
     if (error) throw error;
+    if (data.user) {
+      setUser(data.user);
+      setApiUserId(data.user.id);
+      await syncProfile(data.user);
+    }
+  }, []);
+
+  const signUpWithPassword = useCallback(async (email: string, password: string) => {
+    const supabase = createClient();
+    const { data, error } = await supabase.auth.signUp({
+      email: email.trim(),
+      password,
+    });
+    if (error) throw error;
+    if (data.session?.user) {
+      setUser(data.session.user);
+      setApiUserId(data.session.user.id);
+      await syncProfile(data.session.user);
+      return;
+    }
+    // Autoconfirm off fallback: try immediate sign-in
+    const signed = await supabase.auth.signInWithPassword({
+      email: email.trim(),
+      password,
+    });
+    if (signed.error) throw signed.error;
+    if (signed.data.user) {
+      setUser(signed.data.user);
+      setApiUserId(signed.data.user.id);
+      await syncProfile(signed.data.user);
+    }
   }, []);
 
   const signOut = useCallback(async () => {
@@ -78,8 +123,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ user, loading, configured, signInWithGoogle, signOut }),
-    [user, loading, configured, signInWithGoogle, signOut]
+    () => ({
+      user,
+      loading,
+      configured,
+      signInWithPassword,
+      signUpWithPassword,
+      signOut,
+    }),
+    [user, loading, configured, signInWithPassword, signUpWithPassword, signOut]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

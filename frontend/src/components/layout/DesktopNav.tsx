@@ -24,7 +24,7 @@ export function DesktopNav() {
   const locale = useAppStore((s) => s.locale);
   const onboardingComplete = useAppStore((s) => s.onboardingComplete);
   const clearSessionState = useAppStore((s) => s.clearSessionState);
-  const { user, signOut, signInWithGoogle } = useAuth();
+  const { user, signOut } = useAuth();
   const messages = getMessages(locale);
 
   if (
@@ -106,13 +106,9 @@ export function DesktopNav() {
             </button>
           </div>
         ) : (
-          <button
-            type="button"
-            onClick={() => signInWithGoogle("/settings")}
-            className="sn-btn sn-btn-primary w-full text-xs"
-          >
-            {t(messages, "settings.signInGoogle")}
-          </button>
+          <Link href="/login?next=/settings" className="sn-btn sn-btn-primary w-full text-xs">
+            {t(messages, "settings.signIn")}
+          </Link>
         )}
       </div>
     </aside>

@@ -14,7 +14,7 @@ const HERO =
 
 export default function WelcomePage() {
   const router = useRouter();
-  const { user, loading: authLoading, signInWithGoogle } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const locale = useAppStore((s) => s.locale);
   const setLocale = useAppStore((s) => s.setLocale);
   const onboardingComplete = useAppStore((s) => s.onboardingComplete);
@@ -28,7 +28,9 @@ export default function WelcomePage() {
     setBusy(true);
     try {
       if (!user) {
-        await signInWithGoogle(onboardingComplete ? "/discover" : "/onboarding");
+        router.push(
+          `/login?next=${encodeURIComponent(onboardingComplete ? "/discover" : "/onboarding")}`
+        );
         return;
       }
       if (onboardingComplete) {
@@ -45,8 +47,8 @@ export default function WelcomePage() {
 
   const ctaLabel = !user
     ? locale === "fr"
-      ? "Continuer avec Google"
-      : "Continue with Google"
+      ? "Créer un compte"
+      : "Create account"
     : onboardingComplete
       ? t(messages, "welcome.continue")
       : busy

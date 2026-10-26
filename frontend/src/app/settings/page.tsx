@@ -13,7 +13,7 @@ import { useAppStore } from "@/store/useAppStore";
 
 export default function SettingsPage() {
   const router = useRouter();
-  const { user, signOut, signInWithGoogle, configured } = useAuth();
+  const { user, signOut, configured } = useAuth();
   const locale = useAppStore((s) => s.locale);
   const setLocale = useAppStore((s) => s.setLocale);
   const preferences = useAppStore((s) => s.preferences);
@@ -100,14 +100,12 @@ export default function SettingsPage() {
         ) : (
           <>
             <p className="text-sm text-[var(--sn-muted)]">{t(messages, "settings.accountHint")}</p>
-            <button
-              type="button"
-              className="sn-btn sn-btn-primary w-full"
-              disabled={!configured}
-              onClick={() => signInWithGoogle("/settings")}
+            <Link
+              href="/login?next=/settings"
+              className={`sn-btn sn-btn-primary w-full ${!configured ? "pointer-events-none opacity-60" : ""}`}
             >
-              {t(messages, "settings.signInGoogle")}
-            </button>
+              {t(messages, "settings.signIn")}
+            </Link>
           </>
         )}
       </section>
