@@ -9,7 +9,8 @@ import type {
   UserState,
 } from "./types";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+// Same-origin Next.js `/api/*` routes in prod. Optional override for local FastAPI.
+const API_BASE = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/$/, "");
 
 let apiUserId = "default";
 

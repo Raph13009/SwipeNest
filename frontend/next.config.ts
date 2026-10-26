@@ -13,14 +13,14 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
-  async rewrites() {
-    const api = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
-    return [
-      {
-        source: "/backend-api/:path*",
-        destination: `${api}/api/:path*`,
-      },
-    ];
+  // Include listing data + images in serverless function bundles on Vercel
+  outputFileTracingIncludes: {
+    "/api/**/*": [
+      "./data/processed/**/*",
+      "./data/images/**/*",
+      "../data/processed/**/*",
+      "../data/images/**/*",
+    ],
   },
 };
 
